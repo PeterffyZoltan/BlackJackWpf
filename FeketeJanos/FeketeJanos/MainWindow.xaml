@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Image Width="100" Margin="268,43,432,246"/>
-        <Image Width="100" Margin="438,43,262,246"/>
-        <Image Width="100" Margin="268,229,432,60"/>
-        <Image Width="100" Margin="438,229,262,60"/>
+        <Image x:Name="ImgLap1" Width="100" Margin="268,43,432,246"/>
+        <Image x:Name="ImgLap2" Width="100" Margin="438,43,262,246"/>
+        <Image x:Name="ImgLap3" Width="100" Margin="268,229,432,60"/>
+        <Image x:Name="ImgLap4"    Width="100" Margin="438,229,262,60"/>
         <Label Content="" HorizontalAlignment="Left" Margin="295,0,0,0" VerticalAlignment="Center" Width="215"/>
         <Button Content="Újra" HorizontalAlignment="Center" Margin="0,381,0,0" VerticalAlignment="Top" Width="82"/>
 
