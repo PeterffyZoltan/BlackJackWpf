@@ -23,6 +23,7 @@ namespace FeketeJanos
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }
