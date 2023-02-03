@@ -26,20 +26,26 @@ namespace FeketeJanos
         public MainWindow()
         {
             InitializeComponent();
+            InitializeCards();
             
+            Play();
+        }
+
+        private void InitializeCards()
+        {
             for (int i = 1; i <= 52; i++)
             {
                 Kartya k = new Kartya(i);
                 kartyak.Add(k);
-                
+
             }
-            Play();
         }
 
         private void Play()
         {
             getRandomCards();
             displayCards();
+            
         }
 
         private void getRandomCards()
@@ -47,6 +53,10 @@ namespace FeketeJanos
             for (int i = 0; i < 4; i++)
             {
                 Random r = new Random();
+                if (kartyak.Count < 4)
+                {
+                    InitializeCards();
+                }
                 int kIndex =  r.Next(0, kartyak.Count-1);
                 selectedCards[i] = kartyak[kIndex];
                 kartyak.RemoveAt(kIndex);
@@ -57,18 +67,23 @@ namespace FeketeJanos
 
         private void displayCards()
         {
-            
-                
-                ImgLap1.Source = new BitmapImage(new Uri(selectedCards[0].src, UriKind.Absolute));
-            ImgLap2.Source = new BitmapImage(new Uri(selectedCards[1].src, UriKind.Absolute));
-            ImgLap3.Source = new BitmapImage(new Uri(selectedCards[2].src, UriKind.Absolute));
-            ImgLap4.Source = new BitmapImage(new Uri(selectedCards[3].src, UriKind.Absolute));
+
+
+            ImgLap1.Source = new ImageSourceConverter().ConvertFromString("Imgs/"+selectedCards[0].src) as ImageSource;
+            ImgLap2.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[1].src) as ImageSource;
+            ImgLap3.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[2].src) as ImageSource;
+            ImgLap4.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[3].src) as ImageSource;
 
 
 
 
 
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Play();
         }
     }
 }
