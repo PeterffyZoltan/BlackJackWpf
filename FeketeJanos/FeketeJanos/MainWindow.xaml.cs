@@ -19,8 +19,11 @@ namespace FeketeJanos
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
+        int playerWin = 0;
+        int machineWin = 0;
         Kartya[] selectedCards = new Kartya[4];
         List<Kartya> kartyak = new List<Kartya>();
         public MainWindow()
@@ -45,7 +48,31 @@ namespace FeketeJanos
         {
             getRandomCards();
             displayCards();
-            
+            calcWinner();
+        }
+
+        private void calcWinner()
+        {
+            int machineSum = selectedCards[0].Value + selectedCards[1].Value;
+            int playerSum = selectedCards[2].Value + selectedCards[3].Value;
+            if (playerSum <= 21 && (playerSum > machineSum || machineSum > 21))
+            {
+                playerWin += 1;
+                displayWinner("Győztél");
+            }
+            else
+            {
+                machineWin += 1;
+                displayWinner("Vesztettél");
+            }
+
+        }
+
+        private void displayWinner(string msg)
+        {
+            lblEredmeny.Content = msg;
+            lblOsztoWin.Content = $"Osztó győzelmei: {machineWin}";
+            lblJatekosWin.Content = $"Játékos győzelmei: {playerWin}";
         }
 
         private void getRandomCards()
@@ -57,7 +84,7 @@ namespace FeketeJanos
                 {
                     InitializeCards();
                 }
-                int kIndex =  r.Next(0, kartyak.Count-1);
+                int kIndex = r.Next(0, kartyak.Count - 1);
                 selectedCards[i] = kartyak[kIndex];
                 kartyak.RemoveAt(kIndex);
 
@@ -69,7 +96,7 @@ namespace FeketeJanos
         {
 
 
-            ImgLap1.Source = new ImageSourceConverter().ConvertFromString("Imgs/"+selectedCards[0].src) as ImageSource;
+            ImgLap1.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[0].src) as ImageSource;
             ImgLap2.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[1].src) as ImageSource;
             ImgLap3.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[2].src) as ImageSource;
             ImgLap4.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[3].src) as ImageSource;

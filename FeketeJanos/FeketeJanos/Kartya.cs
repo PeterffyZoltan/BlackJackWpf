@@ -9,7 +9,7 @@ namespace FeketeJanos
     class Kartya
     {
 
-		public int MyProperty
+		public int Value
 		{
 			get {
 				string[] s = src.Split('.');

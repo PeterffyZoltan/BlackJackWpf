@@ -8,23 +8,23 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\sandor.kevin\\.nuget\\packages\\": {},
+    "C:\\Users\\peterffy.zoltan\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\sgproject\\FeketeJanos\\FeketeJanos\\FeketeJanos.csproj",
+      "projectUniqueName": "Z:\\asd\\BlackJackWpf\\FeketeJanos\\FeketeJanos\\FeketeJanos.csproj",
       "projectName": "FeketeJanos",
-      "projectPath": "Z:\\sgproject\\FeketeJanos\\FeketeJanos\\FeketeJanos.csproj",
-      "packagesPath": "C:\\Users\\sandor.kevin\\.nuget\\packages\\",
-      "outputPath": "Z:\\sgproject\\FeketeJanos\\FeketeJanos\\obj\\",
+      "projectPath": "Z:\\asd\\BlackJackWpf\\FeketeJanos\\FeketeJanos\\FeketeJanos.csproj",
+      "packagesPath": "C:\\Users\\peterffy.zoltan\\.nuget\\packages\\",
+      "outputPath": "Z:\\asd\\BlackJackWpf\\FeketeJanos\\FeketeJanos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\sandor.kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\peterffy.zoltan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
