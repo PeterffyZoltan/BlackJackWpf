@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-Z:\wpf-projekt\FeketeJanos\FeketeJanos\obj\Debug\net6.0-windows\
+Z:\sgproject\FeketeJanos\FeketeJanos\obj\Debug\net6.0-windows\
 FeketeJanos
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-Z:\wpf-projekt\FeketeJanos\FeketeJanos\App.xaml
+Z:\sgproject\FeketeJanos\FeketeJanos\App.xaml
 11407045341
 
 41498131718
-194237474483
+194-200944676
 MainWindow.xaml;
 
 False
