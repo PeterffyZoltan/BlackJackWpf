@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Image x:Name="ImgLap1" Width="100" Margin="268,43,432,246"/>
-        <Image x:Name="ImgLap2" Width="100" Margin="438,43,262,246"/>
-        <Image x:Name="ImgLap3" Width="100" Margin="268,229,432,60"/>
-        <Image x:Name="ImgLap4"    Width="100" Margin="438,229,262,60" />
+        <Image x:Name="ImgLap1" Margin="272,43,428,246"/>
+        <Image x:Name="ImgLap2" Width="100" Margin="438,43,255,246"/>
+        <Image x:Name="ImgLap3" Margin="272,229,428,60"/>
+        <Image x:Name="ImgLap4"    Width="100" Margin="438,229,255,60" />
         <Label x:Name="lblEredmeny"  Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Width="216" RenderTransformOrigin="0.479,-0.417" Margin="0,196,0,0"/>
         <Button x:Name="btnUjra" Content="Újra" HorizontalAlignment="Center" Margin="0,381,0,0" VerticalAlignment="Top" Width="82" Click="Button_Click"/>
         <Label x:Name="lblOsztoWin" Content="Osztó győzelmei:" HorizontalAlignment="Left" Height="49" Margin="21,55,0,0" VerticalAlignment="Top" Width="117"/>
