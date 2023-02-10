@@ -119,6 +119,8 @@ namespace FeketeJanos
                 Img.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + k.src) as ImageSource;
                 Img.Width = 50;
                 Img.Height = 110;
+                Img.Margin = new Thickness(10, 0, 10, 0  );
+
                 Img.Stretch = Stretch.Uniform;
                 SpPlayer.Children.Add(Img);
 
@@ -130,8 +132,6 @@ namespace FeketeJanos
                 Img.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + k.src) as ImageSource;
                 Img.Width = 50;
                 Img.Height = 110;
-                Img.Stretch = Stretch.Uniform;
-                Img.HorizontalAlignment = HorizontalAlignment.Center;
                 Img.Margin = new Thickness(10, 0, 10, 0  );
                 SpMachine.Children.Add(Img);
 
@@ -192,6 +192,16 @@ namespace FeketeJanos
         private void btnUjra_Click(object sender, RoutedEventArgs e)
         {
             Play();
+        }
+
+        private void btnElég_Click(object sender, RoutedEventArgs e)
+        {
+            if (endOfGame)
+            {
+                return;
+            }
+            MachinePlay();
+
         }
     }
 }

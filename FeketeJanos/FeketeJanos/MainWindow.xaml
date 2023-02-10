@@ -64,7 +64,7 @@
         </Button>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" x:Name="SpMachine" Margin="0,80,0,244"/>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" x:Name="SpPlayer" Margin="0,241,0,93"/>
-        <Button x:Name="btnElég" Content="Elég" HorizontalAlignment="Left" Margin="493,380,0,0" VerticalAlignment="Top" Width="82" FontFamily="Comic Sans MS">
+        <Button x:Name="btnElég" Content="Elég" HorizontalAlignment="Left" Margin="493,380,0,0" VerticalAlignment="Top" Width="82" FontFamily="Comic Sans MS" Click="btnElég_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1F4607"/>
