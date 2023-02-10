@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label x:Name="lblEredmeny"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.479,-0.417" Margin="370,195,0,0" Height="28" FontFamily="Comic Sans MS" Foreground="White"/>
+        <Label x:Name="lblEredmeny"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.479,-0.417" Margin="359,191,0,0" Height="46" FontFamily="Comic Sans MS" Foreground="White" FontSize="20"/>
         <Button x:Name="btnUjra" Content="Újra" HorizontalAlignment="Left" Margin="267,380,0,0" VerticalAlignment="Top" Width="82" Click="btnUjra_Click" FontFamily="Comic Sans MS">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -82,8 +82,8 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Image x:Name="imgChip" Margin="17,158,689,190" Source="/banger chip.png" RenderTransformOrigin="0.543,0.827"/>
-        <Label x:Name="lblChipSzámláló" Margin="91,177,0,209" Content=":100"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="70">
+        <Image x:Name="imgChip" Margin="17,175,689,173" Source="/banger chip.png" RenderTransformOrigin="0.543,0.827"/>
+        <Label x:Name="lblChipSzámláló" Margin="91,192,0,194" Content=":100"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="70">
 
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
