@@ -84,13 +84,15 @@ namespace FeketeJanos
                     machineHasAce = true;
                 }
             }
-            if (machineSum + 10 < 21 && machineHasAce)
+            if (machineSum + 10 <= 21 && machineHasAce)
             {
                 machineSum += 10;
+
             }
-            if (playerSum + 10 < 21 && playerHasAce)
+            if (playerSum + 10 <= 21 && playerHasAce)
             {
                 playerSum += 10;
+                
             }
             if (playerSum == machineSum) {
                 displayWinner("Döntetlen");
