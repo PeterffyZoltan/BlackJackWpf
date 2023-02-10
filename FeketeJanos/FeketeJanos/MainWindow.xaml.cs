@@ -132,6 +132,7 @@ namespace FeketeJanos
                 Img.Height = 110;
                 Img.Stretch = Stretch.Uniform;
                 Img.HorizontalAlignment = HorizontalAlignment.Center;
+                Img.Margin = new Thickness(10, 0, 10, 0  );
                 SpMachine.Children.Add(Img);
 
             }
@@ -142,10 +143,27 @@ namespace FeketeJanos
 
 
         }
-        
 
-        
-        
+
+
+        private void MachinePlay()
+        {
+            int machineSum = 0;
+            foreach (Kartya k in MachineCards)
+            {
+                machineSum += k.Value;
+            }
+            if (machineSum < 17)
+            {
+                getRandomCard(MachineCards);
+                displayCards();
+                MachinePlay();
+            }
+            else
+            {
+                calcWinner();
+            }
+        }
 
         private void btnOsztas_Click(object sender, RoutedEventArgs e)
         {
