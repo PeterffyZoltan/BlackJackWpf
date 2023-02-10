@@ -191,6 +191,11 @@ namespace FeketeJanos
 
         private void btnUjra_Click(object sender, RoutedEventArgs e)
         {
+            if (!endOfGame)
+            {
+                return;
+            }
+           
             Play();
         }
 
