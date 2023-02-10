@@ -13,8 +13,16 @@ namespace FeketeJanos
 		{
 			get {
 				string[] s = src.Split('.');
-				return int.Parse(s[0])%13 == 0? 13 : int.Parse(s[0]) % 13;
-			}
+				int num = int.Parse(s[0]) % 13;
+				if (num == 0 || num >= 10)
+				{
+					return 10;
+				}
+				else
+				{
+					return num;
+				}
+            }
 		}
 
 		public string src { get; set; }

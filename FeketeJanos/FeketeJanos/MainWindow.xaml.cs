@@ -27,6 +27,8 @@ namespace FeketeJanos
         int machineWin = 0;
         Kartya[] selectedCards = new Kartya[4];
         List<Kartya> kartyak = new List<Kartya>();
+        List<Kartya> MachineCards = new List<Kartya>();
+        List<Kartya> PlayerCards = new List<Kartya>();
         public MainWindow()
         {
             InitializeComponent();
@@ -47,15 +49,24 @@ namespace FeketeJanos
 
         private void Play()
         {
-            getRandomCards();
+            PlayerCards.Clear();
+            MachineCards.Clear();
+            getRandomCard(MachineCards);
             displayCards();
-            calcWinner();
         }
 
         private void calcWinner()
         {
-            int machineSum = selectedCards[0].Value + selectedCards[1].Value;
-            int playerSum = selectedCards[2].Value + selectedCards[3].Value;
+            int playerSum = 0;
+            int machineSum = 0;
+            foreach (Kartya k in PlayerCards)
+            {
+                playerSum += k.Value;
+            }
+            foreach (Kartya k in MachineCards)
+            {
+                machineSum += k.Value;
+            }
             if (playerSum <= 21 && (playerSum > machineSum || machineSum > 21))
             {
                 playerWin += 1;
@@ -76,21 +87,32 @@ namespace FeketeJanos
             lblJatekosWin.Content = $"Játékos győzelmei: {playerWin}";
         }
 
-        private void getRandomCards()
+        private void getRandomCard(List<Kartya> klist)
         {
-            for (int i = 0; i < 4; i++)
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    Random r = new Random();
+            //    if (kartyak.Count < 4)
+            //    {
+            //        InitializeCards();
+            //    }
+            //    int kIndex = r.Next(0, kartyak.Count - 1);
+            //    selectedCards[i] = kartyak[kIndex];
+            //    kartyak.RemoveAt(kIndex);
+
+
+            //}
+            Random r = new Random();
+            if (kartyak.Count < 4)
             {
-                Random r = new Random();
-                if (kartyak.Count < 4)
-                {
-                    InitializeCards();
-                }
-                int kIndex = r.Next(0, kartyak.Count - 1);
-                selectedCards[i] = kartyak[kIndex];
-                kartyak.RemoveAt(kIndex);
-
-
+                InitializeCards();
             }
+            int kIndex = r.Next(0, kartyak.Count - 1);
+            
+            klist.Add(kartyak[kIndex]);
+            kartyak.RemoveAt(kIndex);
+
+
         }
 
         private void displayCards()
@@ -98,14 +120,26 @@ namespace FeketeJanos
 
 
             //ImgLap1.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[0].src) as ImageSource;
-            foreach (Kartya k in kartyak)
+            SpPlayer.Children.Clear();
+            foreach (Kartya k in PlayerCards)
             {
                 Image Img = new Image();
                 Img.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + k.src) as ImageSource;
                 Img.Width = 100;
                 Img.Height = 150;
-                Img.Stretch = Stretch.Fill;
+                Img.Stretch = Stretch.Uniform;
                 SpPlayer.Children.Add(Img);
+
+            }
+            SpMachine.Children.Clear();
+            foreach (Kartya k in MachineCards)
+            {
+                Image Img = new Image();
+                Img.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + k.src) as ImageSource;
+                Img.Width = 100;
+                Img.Height = 150;
+                Img.Stretch = Stretch.Uniform;
+                SpMachine.Children.Add(Img);
 
             }
 
@@ -113,8 +147,11 @@ namespace FeketeJanos
 
 
 
-        }
 
+        }
+        
+
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Play();
