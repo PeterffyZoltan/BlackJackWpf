@@ -57,7 +57,7 @@ namespace FeketeJanos
             getRandomCard(MachineCards);
             displayCards();
             endOfGame = false;
-            lblEredmeny.Content = "";
+            displayWinner("");
 
         }
 
@@ -92,18 +92,26 @@ namespace FeketeJanos
             {
                 playerSum += 10;
             }
+            if (playerSum == machineSum) {
+                displayWinner("Döntetlen");
+                return;
+
+            }
 
             if (playerSum <= 21 && (playerSum > machineSum || machineSum > 21))
             {
                 playerWin += 1;
                 displayWinner("Győztél");
                 chips += 10;
+                lblChipSzámláló.Content = $": {chips}";
             }
             else
             {
                 machineWin += 1;
                 displayWinner("Vesztettél");
                 chips -= 10;
+                lblChipSzámláló.Content = $": {chips}";
+
             }
 
         }
@@ -197,6 +205,7 @@ namespace FeketeJanos
             getRandomCard(PlayerCards);
             displayCards();
             checkIfLost();
+            lblChipSzámláló.Content = $": {chips}";
         }
 
         private void checkIfLost()
@@ -237,7 +246,7 @@ namespace FeketeJanos
             }
 
             MachinePlay();
-            lblChipSzámláló.Content = $": {chips}";
+            
 
         }
     }

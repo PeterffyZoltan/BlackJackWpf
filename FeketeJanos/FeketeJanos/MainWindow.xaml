@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Label x:Name="lblEredmeny"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.479,-0.417" Margin="359,191,0,0" Height="46" FontFamily="Comic Sans MS" Foreground="White" FontSize="20"/>
-        <Button x:Name="btnUjra" Content="Újra" HorizontalAlignment="Left" Margin="267,380,0,0" VerticalAlignment="Top" Width="82" Click="btnUjra_Click" FontFamily="Comic Sans MS">
+        <Button x:Name="btnUjra" Content="Újra" HorizontalAlignment="Left" Margin="267,380,0,0" VerticalAlignment="Top" Width="82" Click="btnUjra_Click" FontFamily="Comic Sans MS" FontSize="14">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1F4607"/>
@@ -26,7 +26,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Label x:Name="lblOsztoWin" Content="Osztó győzelmei:" HorizontalAlignment="Left" Height="49" Margin="21,55,0,0" VerticalAlignment="Top" Width="140" FontFamily="Comic Sans MS">
+        <Label x:Name="lblOsztoWin" Content="Osztó győzelmei:" HorizontalAlignment="Left" Height="49" Margin="21,55,0,0" VerticalAlignment="Top" Width="152" FontFamily="Comic Sans MS" FontSize="14">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFDADADA"/>
@@ -35,7 +35,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label x:Name="lblJatekosWin" Content="Játékos győzelmei:" HorizontalAlignment="Left" Height="49" Margin="21,346,0,0" VerticalAlignment="Top" Width="140" FontFamily="Comic Sans MS" Background="#00000000">
+        <Label x:Name="lblJatekosWin" Content="Játékos győzelmei:" HorizontalAlignment="Left" Height="49" Margin="21,346,0,0" VerticalAlignment="Top" Width="152" FontFamily="Comic Sans MS" Background="#00000000" FontSize="14">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFDADADA" Offset="0.003"/>
@@ -44,7 +44,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Button x:Name="btnOsztas" Content="Osztás" HorizontalAlignment="Left" Margin="380,380,0,0" VerticalAlignment="Top" Width="82" Click="btnOsztas_Click" FontFamily="Comic Sans MS">
+        <Button x:Name="btnOsztas" Content="Osztás" HorizontalAlignment="Left" Margin="380,380,0,0" VerticalAlignment="Top" Width="82" Click="btnOsztas_Click" FontFamily="Comic Sans MS" FontSize="14">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1F4607"/>
@@ -64,7 +64,7 @@
         </Button>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" x:Name="SpMachine" Margin="0,80,0,244"/>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" x:Name="SpPlayer" Margin="0,241,0,93"/>
-        <Button x:Name="btnElég" Content="Elég" HorizontalAlignment="Left" Margin="493,380,0,0" VerticalAlignment="Top" Width="82" FontFamily="Comic Sans MS" Click="btnElég_Click">
+        <Button x:Name="btnElég" Content="Elég" HorizontalAlignment="Left" Margin="493,380,0,0" VerticalAlignment="Top" Width="82" FontFamily="Comic Sans MS" Click="btnElég_Click" FontSize="14">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1F4607"/>
@@ -83,7 +83,7 @@
             </Button.Foreground>
         </Button>
         <Image x:Name="imgChip" Margin="17,175,689,173" Source="/banger chip.png" RenderTransformOrigin="0.543,0.827"/>
-        <Label x:Name="lblChipSzámláló" Margin="91,192,0,194" Content=":100"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="70">
+        <Label x:Name="lblChipSzámláló" Margin="91,192,0,194" Content=":100"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="70" FontSize="14">
 
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
