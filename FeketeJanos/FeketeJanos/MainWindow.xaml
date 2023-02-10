@@ -82,6 +82,17 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
+        <Image x:Name="imgChip" Margin="17,158,689,190" Source="/banger chip.png" RenderTransformOrigin="0.543,0.827"/>
+        <Label x:Name="lblChipSzámláló" Margin="91,177,0,209" Content=":100"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="70">
+
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDADADA"/>
+                    <GradientStop Color="#FFD4D4D4" Offset="1"/>
+                    <GradientStop Color="#FFDED9D9" Offset="0.51"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
         <Grid.Background>
             <ImageBrush ImageSource="/background.png"/>
         </Grid.Background>
