@@ -8,12 +8,12 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Label x:Name="lblEredmeny"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.479,-0.417" Margin="370,195,0,0" Height="28" FontFamily="Comic Sans MS" Foreground="White"/>
-        <Button x:Name="btnUjra" Content="Újra" HorizontalAlignment="Left" Margin="281,380,0,0" VerticalAlignment="Top" Width="82" Click="Button_Click" FontFamily="Comic Sans MS"/>
+        <Button x:Name="btnUjra" Content="Újra" HorizontalAlignment="Left" Margin="281,380,0,0" VerticalAlignment="Top" Width="82"  FontFamily="Comic Sans MS" Click="btnUjra_Click"/>
         <Label x:Name="lblOsztoWin" Content="Osztó győzelmei:" HorizontalAlignment="Left" Height="49" Margin="21,55,0,0" VerticalAlignment="Top" Width="140" FontFamily="Comic Sans MS" Foreground="White"/>
         <Label x:Name="lblJatekosWin" Content="Játékos győzelmei:" HorizontalAlignment="Left" Height="49" Margin="21,346,0,0" VerticalAlignment="Top" Width="140" FontFamily="Comic Sans MS" Background="#00000000" Foreground="White"/>
-        <Button x:Name="btnOsztas" Content="Osztás" HorizontalAlignment="Left" Margin="450,380,0,0" VerticalAlignment="Top" Width="82" Click="Button_Click" FontFamily="Comic Sans MS"/>
-        <StackPanel x:Name="SpMachine" Margin="0,80,0,244"/>
-        <StackPanel x:Name="SpPlayer" Margin="0,241,0,93"/>
+        <Button x:Name="btnOsztas" Content="Osztás" HorizontalAlignment="Left" Margin="450,380,0,0" VerticalAlignment="Top" Width="82"  FontFamily="Comic Sans MS" Click="btnOsztas_Click"/>
+        <StackPanel Orientation="Horizontal"  x:Name="SpMachine" Margin="0,80,0,244"/>
+        <StackPanel Orientation="Horizontal" x:Name="SpPlayer" Margin="0,241,0,93"/>
         <Grid.Background>
             <ImageBrush ImageSource="/background.png"/>
         </Grid.Background>

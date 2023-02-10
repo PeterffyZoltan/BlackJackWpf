@@ -125,8 +125,8 @@ namespace FeketeJanos
             {
                 Image Img = new Image();
                 Img.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + k.src) as ImageSource;
-                Img.Width = 100;
-                Img.Height = 150;
+                Img.Width = 50;
+                Img.Height = 110;
                 Img.Stretch = Stretch.Uniform;
                 SpPlayer.Children.Add(Img);
 
@@ -136,8 +136,8 @@ namespace FeketeJanos
             {
                 Image Img = new Image();
                 Img.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + k.src) as ImageSource;
-                Img.Width = 100;
-                Img.Height = 150;
+                Img.Width = 50;
+                Img.Height = 110;
                 Img.Stretch = Stretch.Uniform;
                 SpMachine.Children.Add(Img);
 
@@ -152,7 +152,15 @@ namespace FeketeJanos
         
 
         
-        private void Button_Click(object sender, RoutedEventArgs e)
+     
+
+        private void btnOsztas_Click(object sender, RoutedEventArgs e)
+        {
+            getRandomCard(PlayerCards);
+            displayCards();
+        }
+
+        private void btnUjra_Click(object sender, RoutedEventArgs e)
         {
             Play();
         }
