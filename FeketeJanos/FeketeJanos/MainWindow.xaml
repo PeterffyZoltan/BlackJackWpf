@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FeketeJanos"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Icon="/lovely három.png">
     <Grid>
         <Label x:Name="lblEredmeny"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.479,-0.417" Margin="359,191,0,0" Height="46" FontFamily="Comic Sans MS" Foreground="White" FontSize="20"/>
         <Button x:Name="btnUjra" Content="Újra" HorizontalAlignment="Left" Margin="267,380,0,0" VerticalAlignment="Top" Width="82" Click="btnUjra_Click" FontFamily="Comic Sans MS" FontSize="14">

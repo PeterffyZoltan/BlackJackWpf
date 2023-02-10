@@ -12,6 +12,7 @@
     <None Remove="2.png" />
     <None Remove="background.png" />
     <None Remove="banger chip.png" />
+    <None Remove="lovely három.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +20,7 @@
     <Resource Include="2.png" />
     <Resource Include="background.png" />
     <Resource Include="banger chip.png" />
+    <Resource Include="lovely három.png" />
   </ItemGroup>
 
   <ItemGroup>
