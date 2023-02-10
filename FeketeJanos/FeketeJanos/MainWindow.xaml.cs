@@ -196,7 +196,7 @@ namespace FeketeJanos
 
         private void btnElég_Click(object sender, RoutedEventArgs e)
         {
-            if (endOfGame)
+            if (endOfGame || PlayerCards.Count < 2)
             {
                 return;
             }
