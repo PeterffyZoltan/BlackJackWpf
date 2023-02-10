@@ -25,6 +25,8 @@ namespace FeketeJanos
     {
         int playerWin = 0;
         int machineWin = 0;
+        int chips = 100;
+
         bool endOfGame = false;
         Kartya[] selectedCards = new Kartya[4];
         List<Kartya> kartyak = new List<Kartya>();
@@ -34,7 +36,7 @@ namespace FeketeJanos
         {
             InitializeComponent();
             InitializeCards();
-            
+
             Play();
         }
 
@@ -56,7 +58,7 @@ namespace FeketeJanos
             displayCards();
             endOfGame = false;
             lblEredmeny.Content = "";
-            
+
         }
 
         private void calcWinner()
@@ -64,23 +66,44 @@ namespace FeketeJanos
             endOfGame = true;
             int playerSum = 0;
             int machineSum = 0;
+            bool machineHasAce = false;
+            bool playerHasAce = false;
             foreach (Kartya k in PlayerCards)
             {
                 playerSum += k.Value;
+                if (k.Value == 1)
+                {
+                    playerHasAce = true;
+                }
             }
             foreach (Kartya k in MachineCards)
             {
                 machineSum += k.Value;
+                if (k.Value == 1)
+                {
+                    machineHasAce = true;
+                }
             }
+            if (machineSum + 10 < 21 && machineHasAce)
+            {
+                machineSum += 10;
+            }
+            if (playerSum + 10 < 21 && playerHasAce)
+            {
+                playerSum += 10;
+            }
+
             if (playerSum <= 21 && (playerSum > machineSum || machineSum > 21))
             {
                 playerWin += 1;
                 displayWinner("Győztél");
+                chips += 10;
             }
             else
             {
                 machineWin += 1;
                 displayWinner("Vesztettél");
+                chips -= 10;
             }
 
         }
@@ -100,7 +123,7 @@ namespace FeketeJanos
                 InitializeCards();
             }
             int kIndex = r.Next(0, kartyak.Count - 1);
-            
+
             klist.Add(kartyak[kIndex]);
             kartyak.RemoveAt(kIndex);
 
@@ -119,7 +142,7 @@ namespace FeketeJanos
                 Img.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + k.src) as ImageSource;
                 Img.Width = 50;
                 Img.Height = 110;
-                Img.Margin = new Thickness(10, 0, 10, 0  );
+                Img.Margin = new Thickness(10, 0, 10, 0);
 
                 Img.Stretch = Stretch.Uniform;
                 SpPlayer.Children.Add(Img);
@@ -132,7 +155,7 @@ namespace FeketeJanos
                 Img.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + k.src) as ImageSource;
                 Img.Width = 50;
                 Img.Height = 110;
-                Img.Margin = new Thickness(10, 0, 10, 0  );
+                Img.Margin = new Thickness(10, 0, 10, 0);
                 SpMachine.Children.Add(Img);
 
             }
@@ -195,7 +218,14 @@ namespace FeketeJanos
             {
                 return;
             }
-           
+            if (chips <= 0)
+            {
+                chips = 0;
+                MessageBox.Show("Nincs több pízed");
+                return;
+
+            }
+
             Play();
         }
 
@@ -205,7 +235,9 @@ namespace FeketeJanos
             {
                 return;
             }
+
             MachinePlay();
+            lblChipSzámláló.Content = $": {chips}";
 
         }
     }
