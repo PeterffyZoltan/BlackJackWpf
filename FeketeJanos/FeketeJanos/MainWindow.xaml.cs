@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static System.Net.Mime.MediaTypeNames;
+using Image = System.Windows.Controls.Image;
 
 namespace FeketeJanos
 {
@@ -96,11 +97,17 @@ namespace FeketeJanos
         {
 
 
-            ImgLap1.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[0].src) as ImageSource;
-            ImgLap2.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[1].src) as ImageSource;
-            ImgLap3.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[2].src) as ImageSource;
-            ImgLap4.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[3].src) as ImageSource;
+            //ImgLap1.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + selectedCards[0].src) as ImageSource;
+            foreach (Kartya k in kartyak)
+            {
+                Image Img = new Image();
+                Img.Source = new ImageSourceConverter().ConvertFromString("Imgs/" + k.src) as ImageSource;
+                Img.Width = 100;
+                Img.Height = 150;
+                Img.Stretch = Stretch.Fill;
+                SpPlayer.Children.Add(Img);
 
+            }
 
 
 
