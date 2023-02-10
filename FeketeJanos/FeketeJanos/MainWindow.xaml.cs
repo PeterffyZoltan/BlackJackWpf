@@ -25,6 +25,7 @@ namespace FeketeJanos
     {
         int playerWin = 0;
         int machineWin = 0;
+        bool endOfGame = false;
         Kartya[] selectedCards = new Kartya[4];
         List<Kartya> kartyak = new List<Kartya>();
         List<Kartya> MachineCards = new List<Kartya>();
@@ -53,10 +54,14 @@ namespace FeketeJanos
             MachineCards.Clear();
             getRandomCard(MachineCards);
             displayCards();
+            endOfGame = false;
+            lblEredmeny.Content = "";
+            
         }
 
         private void calcWinner()
         {
+            endOfGame = true;
             int playerSum = 0;
             int machineSum = 0;
             foreach (Kartya k in PlayerCards)
@@ -89,19 +94,6 @@ namespace FeketeJanos
 
         private void getRandomCard(List<Kartya> klist)
         {
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    Random r = new Random();
-            //    if (kartyak.Count < 4)
-            //    {
-            //        InitializeCards();
-            //    }
-            //    int kIndex = r.Next(0, kartyak.Count - 1);
-            //    selectedCards[i] = kartyak[kIndex];
-            //    kartyak.RemoveAt(kIndex);
-
-
-            //}
             Random r = new Random();
             if (kartyak.Count < 4)
             {
@@ -139,6 +131,7 @@ namespace FeketeJanos
                 Img.Width = 50;
                 Img.Height = 110;
                 Img.Stretch = Stretch.Uniform;
+                Img.HorizontalAlignment = HorizontalAlignment.Center;
                 SpMachine.Children.Add(Img);
 
             }
@@ -152,12 +145,30 @@ namespace FeketeJanos
         
 
         
-     
+        
 
         private void btnOsztas_Click(object sender, RoutedEventArgs e)
         {
+            if (endOfGame)
+            {
+                return;
+            }
             getRandomCard(PlayerCards);
             displayCards();
+            checkIfLost();
+        }
+
+        private void checkIfLost()
+        {
+            int playerSum = 0;
+            foreach (Kartya k in PlayerCards)
+            {
+                playerSum += k.Value;
+            }
+            if (playerSum > 21)
+            {
+                calcWinner();
+            }
         }
 
         private void btnUjra_Click(object sender, RoutedEventArgs e)
